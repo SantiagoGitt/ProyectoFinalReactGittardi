@@ -16,20 +16,20 @@ const onAdd= (productos) =>{
 };
 return(
 <div>
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#!">Fravega</a>
-  <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#"></a>
+<nav className="navbar navbar-dark bg-dark">
+  <a className="navbar-brand" href="#!">Fravega</a>
+  <ul className="nav justify-content-center">
+  <li className="nav-item">
+    <a className="nav-link active" aria-current="page" href="#"></a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Heladeras</a>
+  <li className="nav-item">
+    <a className="nav-link" href="#">Heladeras</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Ventiladores</a>
+  <li className="nav-item">
+    <a className="nav-link" href="#">Ventiladores</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Microondas</a>
+  <li className="nav-item">
+    <a className="nav-link" href="#">Microondas</a>
   <CartWidget onAdd={onAdd} Carrito={Carrito}></CartWidget>
   </li>
   </ul>

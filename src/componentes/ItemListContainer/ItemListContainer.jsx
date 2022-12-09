@@ -1,5 +1,4 @@
 import React from 'react'
-import datos from './productos'
 import Producto from '../main/Producto';
 
 function ItemListContainer(datos){
