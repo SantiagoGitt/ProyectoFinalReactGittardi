@@ -1,7 +1,12 @@
 import React from 'react'
+import { useState } from 'react';
 import Producto from '../main/Producto';
+import getItem from '../MockApi/mockService';
+import datos from './productos';
 
 function ItemListContainer(datos){
+const[Bienes, setBienes] = useState([]);
+getItem().then((respuesta)=> setBienes(respuesta))
 const{productos, onAdd} = datos;       
 return(
     <div>
