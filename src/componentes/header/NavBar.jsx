@@ -1,6 +1,5 @@
 import React from 'react'
-
-
+import { Link } from 'react-router-dom'
 
 const bar=document.getElementById("#1")
 const NavBar=()=>{
@@ -8,23 +7,23 @@ const NavBar=()=>{
 return(
 <div>
 <nav className="navbar navbar-dark bg-dark">
-  <a className="navbar-brand" href="#!">Fravega</a>
+  <Link className="navbar-brand" to="/">Fravega</Link>
   <ul className="nav justify-content-center">
   <li className="nav-item">
-    <a className="nav-link active" aria-current="page" href="#"></a>
+    <Link className="nav-link active" aria-current="page" to="/"></Link>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Heladeras</a>
+    <Link className="nav-link" to="/">Heladeras</Link>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Ventiladores</a>
+    <Link className="nav-link" to="/">Ventiladores</Link>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Microondas</a>
+    <Link className="nav-link" to="/">Microondas</Link>
 
   </li>
   </ul>
-  </nav>
+</nav>
 </div>
 )
 }

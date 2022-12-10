@@ -6,6 +6,7 @@ import datos from './componentes/ItemListContainer/productos'
 import Producto from './componentes/main/Producto';
 import CartWidget from './componentes/header/CartWidget';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import ItemDetailContainer from './componentes/ItemListContainer/ItemDetailContainer';
 
 
 function App() {
@@ -27,13 +28,11 @@ function App() {
      <NavBar></NavBar>
      </div>
      <Routes>
-      <Route path="/" element={<ItemListContainer/>}/>
+      <Route path="/" element={<ItemListContainer productos={productos}/>}/>
+      <Route path="/Detail" element={<ItemDetailContainer/>}/>
 
 
       </Routes>
-     <section>
-     <ItemListContainer productos={productos}></ItemListContainer></section>
-     <div> <CartWidget onAdd={onAdd} Carrito={Carrito}></CartWidget></div>
      </div>
   </BrowserRouter>
   );
