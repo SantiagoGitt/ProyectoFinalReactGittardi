@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const bar=document.getElementById("#1")
-const NavBar=()=>{
 
-return(
+const NavBar=()=>{
+  return(
 <div>
 <nav className="navbar navbar-dark bg-dark">
   <Link className="navbar-brand" to="/">Fravega</Link>
@@ -16,13 +15,11 @@ return(
     <Link className="nav-link" to="/">Heladeras</Link>
   </li>
   <li className="nav-item">
-    <Link className="nav-link" to="/">Ventiladores</Link>
-  </li>
-  <li className="nav-item">
     <Link className="nav-link" to="/">Microondas</Link>
 
   </li>
   </ul>
+
 </nav>
 </div>
 )

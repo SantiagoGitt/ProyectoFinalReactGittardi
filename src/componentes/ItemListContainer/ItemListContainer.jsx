@@ -1,24 +1,51 @@
 import React from 'react'
-import { useState } from 'react';
-import Producto from '../main/Producto';
-import getItem from '../MockApi/mockService';
-import datos from './productos';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Item from "../Items/Item"
+import Datos from "../Datos";
+import Loading from "../../Loading/Loading";
+import "./itemListContainer.css";
 
-function ItemListContainer(datos){
-const[Bienes, setBienes] = useState([]);
-getItem().then((respuesta)=> setBienes(respuesta))
-const{productos, onAdd} = datos;       
-return(
-    <div>
-        <main>
-            <h2>Heladeras</h2>
-            <div>
-            {productos.map((producto)=>(
-            <Producto key={producto.id} producto={producto} onAdd={onAdd}></Producto>
-            ))}
-            </div>
-        </main>
-    </div>
-)}
+const ItemListContainer = () => {
+	const { idCategory } = useParams();
+	const [loading, setLoading] = useState(true);
+	const [myProducts, setMyProducts] = useState();
+
+	useEffect(() => {
+		setLoading(true);
+		getItems(idCategory)
+			.then((response) => setMyProducts(response))
+			.finally(
+				setTimeout(() => {
+					setLoading(false);
+				}, 3000)
+			);
+	}, [idCategory]);
+	const getItems = (valueToFilter) => {
+		return new Promise((resolve) => {
+			if (valueToFilter === undefined) {
+				resolve(Datos);
+			} else {
+				resolve(
+					Datos.filter((datos) => datos.categoria === valueToFilter)
+				);
+			}
+		});
+	};
+	return loading ? (
+		<Loading />
+	) : (
+		<section className='container--ItemListContainer'>
+			<h2 className='itemListContainer--title'>
+				{idCategory === undefined ? "home" : idCategory}
+			</h2>
+			<div className='container--cards'>
+				{Datos.map((Datos) => (
+					<Item key={Datos.id} item={Datos} />
+				))}
+			</div>
+		</section>
+        );
+    };
 
 export default ItemListContainer
