@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Item from "../Items/Item"
-import Datos from "../Datos";
-import Loading from "../../Loading/Loading";
-import "./itemListContainer.css";
+import Item from "./Items/Item"
+import Datos from "./Datos";
+import Loading from "../Loading/Loading";
+
 
 const ItemListContainer = () => {
 	const { idCategory } = useParams();

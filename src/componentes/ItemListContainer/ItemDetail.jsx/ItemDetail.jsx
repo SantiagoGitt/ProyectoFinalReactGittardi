@@ -3,7 +3,7 @@ import Datos from "../Datos";
 import { ItemCount } from "../ItemCount/ItemCount";
 import "./item.css";
 
-export const ItemDetail = ({ DatosFiltered }) => {
+const ItemDetail = ({ DatosFiltered }) => {
 	return (
 		<section className='container--itemDetail'>
 			<h3 className='itemDetail--title'>{DatosFiltered.nombre}</h3>
@@ -20,3 +20,5 @@ export const ItemDetail = ({ DatosFiltered }) => {
 		</section>
 	);
 };
+
+export default ItemDetail

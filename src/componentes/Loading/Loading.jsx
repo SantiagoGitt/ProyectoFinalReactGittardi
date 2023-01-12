@@ -1,4 +1,5 @@
-import "./loading.css";
+import "./Loading.css"
 
-export const Loading = () => {
+const Loading = () => {
 	return <div className='lds-hourglass'></div>;};
+export default Loading

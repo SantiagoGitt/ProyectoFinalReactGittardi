@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { ItemCount } from "../ItemCount/ItemCount";
-import "./item.css";
+import "./ItemDetail.css"
 import Datos from "../Datos"
 
-export const Item = ({ Datos }) => {
+const Item = ({ Datos }) => {
 	return (
 		<div className='card'>
 			<h3 className='card--title'>{Datos.nombre}</h3>
@@ -16,3 +16,5 @@ export const Item = ({ Datos }) => {
 		</div>
 	);
 };
+
+export default Item

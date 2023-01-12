@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./itemCount.css";
 
-export const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock }) => {
 	const [initial, setInitial] = useState(1);
 	const [errorStock, setErrorStock] = useState(false);
 	const handleClick = (value) => {
@@ -37,3 +37,5 @@ export const ItemCount = ({ stock }) => {
 		</div>
 	);
 };
+
+export default ItemCount
