@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import Item from "./Items/Item"
 import Datos from "./Datos";
 import Loading from "../Loading/Loading";
+import "./ItemListContainer.css"
 
 
-const ItemListContainer = () => {
+export const ItemListContainer = () => {
 	const { idCategory } = useParams();
 	const [loading, setLoading] = useState(true);
 	const [myProducts, setMyProducts] = useState();
@@ -40,12 +41,11 @@ const ItemListContainer = () => {
 				{idCategory === undefined ? "home" : idCategory}
 			</h2>
 			<div className='container--cards'>
-				{Datos.map((Datos) => (
-					<Item key={Datos.id} item={Datos} />
+				{myProducts.map((Datos) => (
+					<Item key={Datos.id} Datos={Datos} />
 				))}
 			</div>
 		</section>
         );
     };
 
-export default ItemListContainer

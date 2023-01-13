@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import Item from "../Items/Item"
 import Datos from "../Datos";
 import Loading from "../../Loading/Loading";
-import "./itemListContainer.css";
+import "./ItemDetailContainer.css";
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 export const ItemDetailContainer = () => {
 	const [itemFiltered, setItemFiltered] = useState(null);

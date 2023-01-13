@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Datos from "../Datos";
-import { ItemCount } from "../ItemCount/ItemCount";
-import "./item.css";
+import ItemCount from "../ItemCount/ItemCount";
+
 
 const ItemDetail = ({ DatosFiltered }) => {
 	return (

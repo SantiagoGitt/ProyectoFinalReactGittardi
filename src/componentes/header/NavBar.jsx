@@ -12,10 +12,10 @@ const NavBar=()=>{
     <Link className="nav-link active" aria-current="page" to="/"></Link>
   </li>
   <li className="nav-item">
-    <Link className="nav-link" to="/">Heladeras</Link>
+    <Link className="nav-link" to="/categoria/heladeras">Heladeras</Link>
   </li>
   <li className="nav-item">
-    <Link className="nav-link" to="/">Microondas</Link>
+    <Link className="nav-link" to="/categoria/microondas">Microondas</Link>
 
   </li>
   </ul>
