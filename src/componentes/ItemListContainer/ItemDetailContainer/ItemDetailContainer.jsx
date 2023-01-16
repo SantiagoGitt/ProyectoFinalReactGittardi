@@ -25,7 +25,7 @@ export const ItemDetailContainer = () => {
 
 	const getItem = (valueToFilter) => {
 		return new Promise((resolve) => {
-			resolve(Datos.find((Datos) => Datos.id === Number(valueToFilter)));
+			resolve(Datos.find((Datos) => Datos.id === valueToFilter));
 		});
 	};
 
