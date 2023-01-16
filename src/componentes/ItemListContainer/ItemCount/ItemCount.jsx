@@ -28,7 +28,7 @@ const ItemCount = ({ stock, onAddToCart }) => {
 					+
 				</button>
 			</div>
-			<button onClick={()=>{onAddToCart(count)}} className='itemCount--buttonCart'>Add to Cart</button>
+			<button onClick={()=>{onAddToCart(initial)}} className='itemCount--buttonCart'>Add to Cart</button>
 			{errorStock && (
 				<div className='itemCount--error'>
 					Se alcanzo el máximo disponible

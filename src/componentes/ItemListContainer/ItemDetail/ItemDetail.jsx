@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import {CartContext} from "../context/Context";
+import { CartContext } from "../context/Context";
+import Datos from "../Datos"
 
 
 
 export const ItemDetail = ({ itemFiltered }) => {
 	const {addToCart}= useContext(CartContext);
 
-	const handleAddToCart = (count) => {addToCart(Datos, count)}
+	const handleAddToCart = (initial) => {addToCart(Datos, initial)}
 	return (
 		<section className='container--itemDetail'>
 			<h3 className='itemDetail--title'>{itemFiltered.nombre}</h3>

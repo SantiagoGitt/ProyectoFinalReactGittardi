@@ -6,6 +6,7 @@ import Loading from "../../Loading/Loading";
 import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail"
 
+
 export const ItemDetailContainer = () => {
 	const [itemFiltered, setItemFiltered] = useState(null);
 	const [loading, setLoading] = useState(true);
