@@ -2,11 +2,13 @@ import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../context/Context';
 import { Link } from "react-router-dom";
+import "./Cart.css"
 
 
 const Cart = () => {
-    const {Cart, GetTotalPrice}= useContext(CartContext)
+    const {Cart, GetTotalPrice, getTotalItemCount, removeItem}= useContext(CartContext)
   return (
+    <section className="container">
     <div >{Cart.map((item=>(
         <>
         <div key={item.id}>
@@ -14,10 +16,12 @@ const Cart = () => {
         <img src={item.img}/>
         <h1>${item.precio}</h1>
         <h1>Precio Total ${GetTotalPrice()}</h1>
-        <Link to="/Checkout">Checkout</Link>
+        <h1>Cantidad de items: {getTotalItemCount()}</h1>
+
         </div></>
         )))}
-    </div>
+                <Link to="/Checkout">Checkout</Link>
+    </div></section>
   )
 }
 

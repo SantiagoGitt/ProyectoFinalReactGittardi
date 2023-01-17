@@ -3,6 +3,7 @@ import { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../context/Context";
 import Datos from "../Datos"
+import "./itemDetail.css"
 
 
 

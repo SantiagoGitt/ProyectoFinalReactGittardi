@@ -7,7 +7,6 @@ export const CartContext = createContext();
 
 const ProviderCarrito = ({children}) => {
     const [Cart, setCart]= useState([]);
-    console.log(Cart)
     const isInCart= (id) => Cart.find((Item) => Item.id === id)? true:false;
     const addToCart= (Item, initial)=> {
         if (isInCart(Item.id)){
@@ -29,8 +28,16 @@ const removeItem = (idToRemove) =>{
   let newCart= Cart.filter(ItemInCart=>(ItemInCart.id !== idToRemove))
   setCart(newCart);
 };
+
+const getTotalItemCount= () => {
+  let total =1;
+  Cart.forEach((ItemInCart) => {
+    total= total + ItemInCart.count;
+  });
+  return total;
+};
   return (
-    <CartContext.Provider value={{ Cart, addToCart, ClearCart, removeItem, GetTotalPrice}}>
+    <CartContext.Provider value={{ Cart, addToCart, ClearCart, removeItem, GetTotalPrice, getTotalItemCount}}>
      {children}   
     </CartContext.Provider>
   )
