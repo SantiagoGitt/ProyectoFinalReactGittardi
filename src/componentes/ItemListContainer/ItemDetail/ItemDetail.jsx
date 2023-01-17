@@ -9,7 +9,7 @@ import Datos from "../Datos"
 export const ItemDetail = ({ itemFiltered }) => {
 	const {addToCart}= useContext(CartContext);
 
-	const handleAddToCart = (initial) => {addToCart(Datos, initial)}
+	const handleAddToCart = (initial) => {addToCart(itemFiltered, initial)}
 	return (
 		<section className='container--itemDetail'>
 			<h3 className='itemDetail--title'>{itemFiltered.nombre}</h3>

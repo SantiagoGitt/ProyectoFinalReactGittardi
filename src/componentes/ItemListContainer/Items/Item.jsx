@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import  ItemCount  from "../ItemCount/ItemCount";
 import "./Item.css"
+import { useContext } from "react";
+import { CartContext } from "../context/Context";
 
 const Item = ({ Datos }) => {
+	const {addToCart}= useContext(CartContext);
 	return (
 		<div className='card'>
 			<h3 className='card--title'>{Datos.nombre}</h3>
