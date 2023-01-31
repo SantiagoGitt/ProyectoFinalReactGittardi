@@ -30,7 +30,7 @@ const removeItem = (idToRemove) =>{
 };
 
 const getTotalItemCount= () => {
-  let total =1;
+  let total =0;
   Cart.forEach((ItemInCart) => {
     total= total + ItemInCart.count;
   });

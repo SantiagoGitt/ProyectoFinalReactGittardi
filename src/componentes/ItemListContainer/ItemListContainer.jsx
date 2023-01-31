@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import Item from "./Items/Item"
 import Datos from "./Datos";
 import Loading from "../Loading/Loading";
-import "./ItemListContainer.css"
+import "./ItemListContainer.css";
+import { getItem } from "../Services/Firebase";
 
 
 export const ItemListContainer = () => {
