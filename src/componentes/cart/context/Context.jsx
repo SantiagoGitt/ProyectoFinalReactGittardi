@@ -2,12 +2,10 @@ import { createContext } from "react"
 import React from 'react'
 import { useState } from "react"
 import { act } from "react-dom/test-utils";
-
 export const CartContext = createContext();
 
 const ProviderCarrito = ({children}) => {
     const [Cart, setCart]= useState([]);
-    console.log(Cart)
     const isInCart= (id) => Cart.find((Item) => Item.id === id)? true:false;
     const addToCart= (Item, initial)=> {
         if (isInCart(Item.id)){

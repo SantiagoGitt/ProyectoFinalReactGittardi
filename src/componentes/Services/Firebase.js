@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc } from "firebase/firebase";
-import ItemDetail from "../ItemListContainer/ItemDetail/ItemDetail";
+import {  getFirestore,  doc, getDoc, collection, getDocs, addDoc} from "firebase/firestore";
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCo7dtTmuDz2ZpyLRThUrSIk3VVFSwd1q0",
@@ -15,9 +16,31 @@ const app = initializeApp(firebaseConfig);
 
 const DB = getFirestore(app);
 
-export async function getItem() {
+export async function getSingleItem() {
     let id="0XkCtuCaz1WkKVCvGquS";
-    let docReference =doc (DB, "Datos", id);
-    let respuesta = await getDoc (docRef);
-    let item= respuesta.data()
+    let docRef =doc (DB, "Datos", id);
+    let docSnapshot = await getDoc(docRef);
+    let item = docSnapshot.data();
+    item.id = docSnapshot.id;
+    
 }
+
+export async function getItems() {
+  let collectionRef = collection(DB, "Datos");
+  let docsSnapshot = await getDocs(collectionRef);
+  let docsArray = docsSnapshot.docs;
+
+  let dataDocs = docsArray.map((doc) => {
+    let item = doc.data()
+    item.id= doc.id;
+    return item
+
+  });
+  return dataDocs;}
+
+  export async function createBuyOrder(order){
+    let collectionRef = collection(DB, "order");
+    let newOrder= await addDoc(collectionRef, order )
+    return newOrder.id;
+
+  }

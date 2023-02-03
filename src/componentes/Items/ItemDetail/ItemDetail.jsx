@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import ItemCount from "../ItemCount/ItemCount";
-import { CartContext } from "../context/Context";
-import Datos from "../Datos"
-
+import ItemCount from "../../ItemListContainer/ItemCount/ItemCount";
+import { CartContext } from "../../cart/context/Context";
 
 
 export const ItemDetail = ({ itemFiltered }) => {
