@@ -2,7 +2,7 @@ import React from "react";
 import datos from "../ItemListContainer/Datos";
 
 
-function getItem(){
+/*function getItem(){
     return new Promise((resolve)=> {
         setTimeout(()=>{
             resolve(datos);
@@ -18,4 +18,4 @@ export function getSingleItem(){
     });
 }
 
-export default getItem
+export default getItem*/

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Item from "./Items/Item"
+import Item from "../Items/Item"
 import Datos from "./Datos";
 import Loading from "../Loading/Loading";
 import "./ItemListContainer.css";

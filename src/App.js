@@ -4,11 +4,11 @@ import NavBar from './componentes/header/NavBar';
 import { ItemListContainer } from './componentes/ItemListContainer/ItemListContainer';
 import datos from './componentes/ItemListContainer/Datos'
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
-import { ItemDetailContainer } from './componentes/ItemListContainer/ItemDetailContainer/ItemDetailContainer';
-import ProviderCarrito from "./componentes/ItemListContainer/context/Context";
-import Cart from './componentes/ItemListContainer/cart/Cart';
-import { Checkout } from './componentes/ItemListContainer/checkout/Checkout';
-import  Gracias  from './componentes/ItemListContainer/Gracias/Gracias';
+import { ItemDetailContainer } from './componentes/Items/ItemDetailContainer/ItemDetailContainer';
+import ProviderCarrito from "./componentes/cart/context/Context";
+import Cart from './componentes/cart/Cart';
+import { Checkout } from './componentes/cart/checkout/Checkout';
+import  Gracias  from './componentes/cart/Gracias/Gracias';
 
 
 function App() {
