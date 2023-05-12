@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"
 import { getFirestore, doc, getDoc } from "firebase/firebase";
 import ItemDetail from "../ItemListContainer/ItemDetail/ItemDetail";
 
