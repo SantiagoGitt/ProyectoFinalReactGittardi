@@ -18,21 +18,21 @@ const Cart = () => {
       if (order)
       return navigate(`/gracias/${id}`)
     })
-
+  }
+console.log(Cart, 'cart')
   return (
-    <div >{Cart.map((item=>(
+    <div>{Cart.map((item=>(
         <>
-        <div key={item.id}>
-        <h1>{item.nombre}</h1>
-        <img src={item.img} alt={item.nombre}/>
-        <h1>${item.precio}</h1>
+        <div class='card' key={item.id}>
+        <h1 className='card--tittle'>{item.nombre}</h1>
+        <img className='card--img' src={item.img} alt={item.nombre}/>
+        <h1 className='card--price' >${item.precio}</h1>
         <h1>Precio Total ${GetTotalPrice()}</h1>
-        <CheckoutForm onCheckout={handleCheckout} />
-  
-        </div></>
+        </div>
+        <CheckoutForm class="container" onCheckout={handleCheckout} /></>
         )))}
     </div>
   )
-}}
+}
 
-export default Cart
+export default Cart

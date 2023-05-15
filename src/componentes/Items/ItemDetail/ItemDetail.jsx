@@ -9,19 +9,21 @@ export const ItemDetail = ({ itemFiltered }) => {
 
 	const handleAddToCart = (initial) => {addToCart(itemFiltered, initial)}
 	return (
-		<section className='container--itemDetail'>
-			<h3 className='itemDetail--title'>{itemFiltered.nombre}</h3>
+	<div class="container">
+		<section className='card'>
+			<h3 className='card--tittle'>{itemFiltered.nombre}</h3>
 			<img
-				className='itemDetail--img'
+				className='card--img'
 				src={itemFiltered.img}
 				alt={itemFiltered.nombre}
 			/>
-			<div className='itemDetail--price'>
+			<div className='card--price'>
 				Price $ {itemFiltered.precio}
 			</div>
 			<div className='itemDetail--stock'>Stock {itemFiltered.stock}</div>
 			<ItemCount onAddToCart={handleAddToCart} stock={itemFiltered.stock} />
 		</section>
+	</div>
 	);
 };
 
