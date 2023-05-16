@@ -9,17 +9,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const {Cart, GetTotalPrice, removeItem, ClearCart}= useContext(CartContext)
   let navigate = useNavigate()
-  function handleCheckoutForm(buyerData) {
-    const order = {
-      buyer: buyerData,
-      items: Cart,
-      total: GetTotalPrice(),
-    };
-    createBuyOrder(order).then((id) =>{
-      if (order)
-      return navigate(`/gracias/${id}`)
-    })
-  }
+
 console.log(Cart, 'cart')
   return (
     <div>{Cart.map(item=>(

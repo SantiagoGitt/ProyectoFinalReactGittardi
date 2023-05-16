@@ -16,7 +16,17 @@ function CheckoutForm({ onCheckout }) {
     newBuyerData[nameInput] = value;
     setBuyerData(newBuyerData);
   }
-
+  function handleCheckoutForm(buyerData) {
+    const order = {
+      buyer: buyerData,
+      items: Cart,
+      total: GetTotalPrice(),
+    };
+    createBuyOrder(order).then((id) =>{
+      if (order)
+      return navigate(`/gracias/${id}`)
+    })
+  }
   function onSubmit(evt) {
     evt.preventDefault();
     setBuyerData({
