@@ -7,7 +7,7 @@ import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import { ItemDetailContainer } from './componentes/Items/ItemDetailContainer/ItemDetailContainer';
 import ProviderCarrito from "./componentes/cart/context/Context";
 import Cart from './componentes/cart/Cart';
-import { Checkout } from './componentes/cart/checkout/Checkout';
+import  CheckoutForm  from './componentes/cart/checkout/CheckoutForm';
 import  Gracias  from './componentes/cart/Gracias/Gracias';
 
 
@@ -25,7 +25,7 @@ function App() {
       <Route path="/Detail" element={<ItemDetailContainer/>}/>
       <Route path="/items/:IdDatos" element={<ItemDetailContainer/>}/>
       <Route path="/Cart" element={<Cart/>}/>
-      <Route path="/Checkout" element={<Checkout/>}/>
+      <Route path="/CheckoutForm" element={<CheckoutForm/>}/>
       <Route path="/Gracias" element={<Gracias/>}/>
 
 

@@ -50,7 +50,7 @@ function CheckoutForm({ onCheckout }) {
           onChange={handleInputChange}
         />
 
-        <button onClick={onSubmit}>Submit</button>
+        <button onClick={onSubmit}>finalizar compra</button>
       </form>
     </div>
   );

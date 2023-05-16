@@ -2,13 +2,14 @@ import { useContext } from 'react';
 import { CartContext} from './context/Context';
 import { useNavigate } from "react-router-dom";
 import { createBuyOrder } from '../Services/Firebase'
-import  CheckoutForm  from './checkout/CheckoutForm';
+import  {CheckoutForm}  from './checkout/CheckoutForm';
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
   const {Cart, GetTotalPrice, removeItem, ClearCart}= useContext(CartContext)
   let navigate = useNavigate()
-  function handleCheckout(buyerData) {
+  function handleCheckoutForm(buyerData) {
     const order = {
       buyer: buyerData,
       items: Cart,
@@ -35,7 +36,7 @@ console.log(Cart, 'cart')
 
         </>))}
       <h1>Precio Total ${GetTotalPrice()}</h1>
-      <CheckoutForm class="container" onCheckout={handleCheckout} />
+      <Link to="/CheckoutForm">Finalizar Compra</Link>
      </div>
   )
 }
