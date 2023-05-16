@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import InputForm from "./Input";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../context/Context";
+import { createBuyOrder } from '../../Services/Firebase'
 
-function CheckoutForm({ onCheckout }) {
+function CheckoutForm() {
   const [buyerData, setBuyerData] = useState({
     name: "",
     email: "",
     phone: "",
   });
+  const {Cart, GetTotalPrice, ClearCart}= useContext(CartContext)
+  let navigate = useNavigate()
 
   function handleInputChange(evt) {
     let nameInput = evt.target.name;
@@ -16,15 +21,18 @@ function CheckoutForm({ onCheckout }) {
     newBuyerData[nameInput] = value;
     setBuyerData(newBuyerData);
   }
-  function handleCheckoutForm(buyerData) {
+  function handleCheckoutForm() {
     const order = {
       buyer: buyerData,
       items: Cart,
       total: GetTotalPrice(),
     };
     createBuyOrder(order).then((id) =>{
-      if (order)
-      return navigate(`/gracias/${id}`)
+     
+      if (id){
+        ClearCart()
+        return navigate(`/gracias/${id}`)
+      }
     })
   }
   function onSubmit(evt) {
@@ -34,7 +42,7 @@ function CheckoutForm({ onCheckout }) {
       email: "",
       phone: "",
     });
-    onCheckout(buyerData);
+    handleCheckoutForm()
   }
 
   return (
@@ -60,10 +68,10 @@ function CheckoutForm({ onCheckout }) {
           onChange={handleInputChange}
         />
 
-        <button onClick={onSubmit}>finalizar compra</button>
+        <button disabled={buyerData.phone === '' || buyerData.name === '' || buyerData.email === ''} onClick={onSubmit}>finalizar compra</button>
       </form>
     </div>
   );
 }
 
-export default CheckoutForm;
+export default CheckoutForm;

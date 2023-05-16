@@ -1,4 +1,3 @@
-
 import './App.css';
 import NavBar from './componentes/header/NavBar';
 import { ItemListContainer } from './componentes/ItemListContainer/ItemListContainer';
@@ -26,7 +25,7 @@ function App() {
       <Route path="/items/:IdDatos" element={<ItemDetailContainer/>}/>
       <Route path="/Cart" element={<Cart/>}/>
       <Route path="/CheckoutForm" element={<CheckoutForm/>}/>
-      <Route path="/Gracias" element={<Gracias/>}/>
+      <Route path="/gracias/:idOrden" element={<Gracias/>}/>
 
 
       </Routes>
@@ -36,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
